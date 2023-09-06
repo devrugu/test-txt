@@ -1,0 +1,15 @@
+*Distance:
+        TYPE	=	int
+        VALUE	=	2000
+*Path:
+        TYPE	=	string
+        VALUE	=	"/tmp/project/logs/"
+*ValueVector:
+        TYPE	=	vector<int>
+        VALUE	=	(12,13,14)
+*Range:
+        TYPE	=	double
+        VALUE	=	12.256
+*Test:
+	TYPE	=	float
+	VALUE	=	456.234
