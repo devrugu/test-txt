@@ -13,3 +13,6 @@
 *Test:
 	TYPE	=	float
 	VALUE	=	456.234
+*isValid:
+	TYPE	=	bool
+	VALUE	=	true   

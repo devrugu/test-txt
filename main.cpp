@@ -46,6 +46,19 @@ int main() {
             CastedVariables[var.name] = std::stof(var.value);
         } else if (var.type == "string") {
             CastedVariables[var.name] = var.value;
+        } else if (var.type == "bool") {
+            bool value;
+            if(var.value == "true" || var.value == "1" || var.value == "TRUE") {
+                value = true;
+            } else if (var.value == "false" || var.value == "0" || var.value == "FALSE") {
+                value = false;
+            } else {
+                std::cout << "bool type should be 'true' or 'false'.\n"
+                             "correct usage --> 'true', '1' or 'TRUE' for true "
+                             "and 'false', '0' or 'FALSE' for false\n";
+                exit(1);
+            }
+            CastedVariables[var.name] = value;
         }
         content = m.suffix().str();
     }
@@ -55,6 +68,7 @@ int main() {
         std::cout << "Path: " << std::any_cast<std::string>(CastedVariables["Path"]) << "\n";
         std::cout << "Range: " << std::any_cast<double>(CastedVariables["Range"]) << "\n";
         std::cout << "Test: " << std::any_cast<float>(CastedVariables["Test"]) << "\n";
+        std::cout << "isValid: " << std::any_cast<bool>(CastedVariables["isValid"]) << "\n";
     } catch (const std::bad_any_cast& e) {
         std::cout << "Failed to cast variable: " << e.what() << "\n";
     }
